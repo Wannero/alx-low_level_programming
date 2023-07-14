@@ -12,7 +12,7 @@ int main(void)
 	{
 		if (Alph == 'e' || Alph == 'q')
 			continue;
-		putchar(ch);
+		putchar(Alph);
 	}
 	putchar('\n');
 	return (0);
