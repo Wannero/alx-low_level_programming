@@ -8,7 +8,7 @@ int real_sqrt(int x, int y);
  *
  * Return: the natural square root
  */
- 
+
 int _sqrt_recursion(int n)
 {
 	return (real_sqrt(n, 1));
