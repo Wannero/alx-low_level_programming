@@ -1,18 +1,19 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
- * main - this fun prints its name
- * @argc: count line command argument
- * @argv: contain arg in line command
+ * main- a program that prints its name
  *
- * return: 0
- */
+ * @argc: number of arguments passed
+ * @argv: holds the arguments passed
+ *
+ * Return: Success 0
+*/
 
-int main(int argc __attribute__((unused)), char *argv[])
+int main(int __attribute__((unused)) argc, char *argv[])
 {
 	int S = 0;
-	printf("%s\n", *argv[S]);
 
-		return (0);
+	printf("%s\n", argv[S]);
+	return (0);
 }
