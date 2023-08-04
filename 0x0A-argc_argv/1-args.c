@@ -1,24 +1,15 @@
-#include <stdlib.h>
 #include <stdio.h>
 
 /**
- * main - prints the number of arguments passed into it
- *
- * @argc: arguments passed
- * @argv: holds the arguments passed
- *
- * Return: Success
-*/
+ * main - function prints number of argument
+ * @argc:number argument
+ * @argv:unused arg
+ * Return: 0
+ */
 
-int main(int argc, char __attribute__((unused)) *argv[])
+int main(int argc, char **argv __attribute__((unused)))
 {
-	int L = 0, G;
+	printf("%d\n", argc - 1);
 
-	while (L < argc)
-	{
-		G = L;
-		L++;
-	}
-	printf("%d\n", G);
 	return (0);
 }
