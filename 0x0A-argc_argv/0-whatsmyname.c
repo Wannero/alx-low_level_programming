@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
- * main - prints its name
- * @argc: count line
- * @argv: contain arg
+ * main - this fun prints its name
+ * @argc: count line command argument
+ * @argv: contain arg in line command
  *
  * return: 0
  */
