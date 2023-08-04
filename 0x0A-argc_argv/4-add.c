@@ -2,29 +2,31 @@
 #include <stdlib.h>
 
 /**
-*main - adds numbers
-*
+*main - adds positive numbers
 *@argc: number of arguments
 *@argv: array of arguments
-*
-*Return: 0 if success, 1 if fail
+*Return: 0 on success, 1 on failure
 */
 
 int main(int argc, char *argv[])
 {
-	int s, v, add = 0;
+	int i, j, sum = 0;
 
-	for (s = 1; s < argc; s++)
+	for (i = 1; i < argc; i++)
 	{
-		for (v = 0; argv[s][v] != '\0'; v++)
+		for (j = 0; argv[i][j] != '\0'; j++)
 		{
-			if (argv[s][v] < '0' || argv[s][v] > '9')
+			if (argv[i][j] < '0' || argv[i][j] > '9')
 			{
 				printf("Error\n");
 				return (1);
 			}
 		}
 
-		add += atoi(argv[s]);
+		sum += atoi(argv[i]);
 	}
-}
+
+	printf("%d\n", sum);
+
+	return (0);
+}	
