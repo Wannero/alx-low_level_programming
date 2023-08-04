@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
 *main - adds numbers
@@ -26,3 +27,4 @@ int main(int argc, char *argv[])
 
 		add += atoi(argv[s]);
 	}
+}
