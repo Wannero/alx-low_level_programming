@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * main - this fun prints its name
@@ -10,7 +11,8 @@
 
 int main(int argc __attribute__((unused)), char *argv[])
 {
-	printf("%s\n", *argv);
+	int S = 0;
+	printf("%s\n", *argv[S]);
 
 		return (0);
 }
