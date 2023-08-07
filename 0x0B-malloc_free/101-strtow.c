@@ -53,7 +53,7 @@ char **strtow(char *str)
 	if (mat == NULL)
 		return (NULL);
 
-	for (n = 0; n <= len; n++)
+	for (n = 0; n <= ln; n++)
 	{
 		if (str[n] == ' ' || str[n] == '\0')
 		{
