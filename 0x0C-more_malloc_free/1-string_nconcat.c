@@ -1,47 +1,67 @@
 #include <stdlib.h>
+#include <stdio.h>
+
+void *malloc_checked(unsigned int b);
+char *string_nconcat(char *s1, char *s2, unsigned int n);
+void *_calloc(unsigned int nmemb, unsigned int size);
+int *array_range(int min, int max);
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+int _putchar(char c);
+
+/*functions for 101-mul.c */
 
 /**
- * string_nconcat - This function concatenates two strings.
+ * error_exit - prints error with _putchar
+ * and exits with 98
  *
- * @s1: string nuber 1
- * @s2: string nuber 2
- * @n: bytes of @s2 to add to @s1 to be a new string
- *
- * Return: new string followed by the first @n bytes
- *		of string 2 @s2
- *		or NULL
+ * Return: Error 98 and exit(98)
  */
 
-char *string_nconcat(char *s1, char *s2, unsigned int n)
+int error_exit(void)
 {
-	unsigned int p1, p2, k, h;
-	char *st;
+	char *err;
+	int i;
 
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
+	err = "Error";
+	for (i = 0; err[i] != '\0'; i++)
+		_putchar(err[i]);
+	_putchar('\n');
+	exit(98);
+}
 
-	p1 = p2 = 0;
-	while (s1[p1] != '\0')
-		l1++;
-	while (s2[p2] != '\0')
-		p2++;
+/**
+ * check_number - checks if string has only
+ * numbers
+ *
+ * @str: string to check
+ *
+ * Return: 0 is true 1 if false
+ */
 
-	if (n >= p2)
-		n = p2;
-
-	st = (char *) malloc((p1 + n + 1) * sizeof(char));
-	if (st == NULL)
-		return (NULL);
-
-	for (k = 0; s1[k] != '\0'; k++)
-		st[k] = s1[k];
-	for (h = 0; h < n && s2[h] != '\0'; h++)
+int check_number(char *str)
+{
+	while (*str != '\0')
 	{
-		st[k] = s2[h];
-		k++;
+		if (*str < '0' || *str > '9')
+			return (1);
+		str++;
 	}
-	st[k] = '\0';
-	return (st);
+	return (0);
+}
+
+/**
+ * _length - get the length of strings
+ *
+ * @str: string to get length of
+ *
+ * Return: length of string
+ */
+
+int _length(char *str)
+{
+	int i = 0;
+
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }
