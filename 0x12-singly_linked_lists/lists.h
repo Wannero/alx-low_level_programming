@@ -1,14 +1,14 @@
-#ifndef main_h
-#define main_h
+#ifndef lists_h
+#define lists_h
 
 /**
  * struct list_s - Function that singly linked list.
  *
- * @str: string. 
+ * @str: string.
  * @len: length of it.
  * @next: points to the next node.
  *
- * Description: singly linked list node structure.
+ * Description: singly linked list.
  *
  */
 
