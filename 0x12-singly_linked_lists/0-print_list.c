@@ -1,6 +1,15 @@
 #include <stdio.h>
 #include "list.h"
 
+/**
+ * print_list - Function that prints all the elements of a list_t.
+ *
+ * @h: constant pointer.
+ *
+ * Return: the numbers.
+ *
+ */
+
 size_t print_list(const list_t *h)
 {
     size_t i = 0;
