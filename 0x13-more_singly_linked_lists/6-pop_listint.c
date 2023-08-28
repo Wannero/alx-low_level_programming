@@ -1,23 +1,28 @@
 #include "lists.h"
 
 /**
- * pop_listint - fontion that deletes the head node.
+ * pop_listint - deletes the head node.
  *
  * @head: double pointer to the head.
  *
- * Return: the head nodes data (r).
+ * Return: the head nodes data (n).
  */
 
 int pop_listint(listint_t **head)
 {
-	int r = 0;
+	int n = 0;
 	listint_t *ptraux;
 
 	if (*head == NULL)
 		return (0);
-	r = (*head)->r;
+
+	n = (*head)->n;
+
 	ptraux = (*head)->next;
+
 	free(*head);
+
 	*head = ptraux;
-	return (r);
+
+	return (n);
 }
