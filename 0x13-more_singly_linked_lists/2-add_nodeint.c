@@ -1,27 +1,26 @@
 #include "lists.h"
 
 /**
- * add_nodeint - fontion that adds a new node at the beginning
+ * add_nodeint - a function that add new node
  *
- * @head: double pointer to listint_t
- * @n: the number of elements in listint_t
+ * @head: linked list
+ * @n: integer
  *
  * Return: he address of the new element, or NULL if it failed
- *
  */
 
 listint_t *add_nodeint(listint_t **head, const int n)
 {
-	listint_t *news;
+	listint_t *newnode;
 
-	news = malloc(sizeof(listint_t));
-	if (new)
+	newnode = malloc(sizeof(listint_t));
+	if (newnode)
 	{
-		news->n = n;
-		news->next = *head;
-		*head = news;
-		return (news);
+		newnode->n = n;
+		newnode->next = *head;
+		*head = newnode;
+		return (newnode);
 	}
-	free(news);
+	free(newnode);
 	return (NULL);
 }
