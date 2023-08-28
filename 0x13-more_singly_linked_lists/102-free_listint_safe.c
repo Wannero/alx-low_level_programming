@@ -1,48 +1,41 @@
 #include "lists.h"
 
 /**
-* free_listint_safe - function that frees a list.
-*
-* @h: the pointer to a pointer of head.
-*
-* Return: the size of the list.
-*/
+ * free_listint_safe - frees a linked list
+ * @h: pointer to the first node in the linked list
+ *
+ * Return: number of elements in the freed list
+ */
 
 size_t free_listint_safe(listint_t **h)
 {
-	size_t count = 0;
-	listint_t **array;
-	unsigned int s = 0;
-	unsigned int flag = 0;
+	size_t len = 0;
+	int diff;
+	listint_t *temp;
 
-	array = malloc(sizeof(listint_t *) * 1024);
-	if (!array)
-		exit(98);
-	while (*h != NULL)
+	if (!h || !*h)
+		return (0);
+
+	while (*h)
 	{
-		for (s = 0; s < count; s++)
+		diff = *h - (*h)->next;
+		if (diff > 0)
 		{
-			if (*h == array[s])
-			{
-				flag = 1;
-				break;
-			}
-			else
-				flag = 0;
+			temp = (*h)->next;
+			free(*h);
+			*h = temp;
+			len++;
 		}
-		if (flag == 1)
+		else
+		{
+			free(*h);
+			*h = NULL;
+			len++;
 			break;
-		array[count] = *h;
-		*h = (*h)->next;
-		count++;
+		}
 	}
-	s = 0;
-	while (s < count)
-	{
-		free(array[s]);
-		s++;
-	}
-	free(array);
+
 	*h = NULL;
-	return (count);
+
+    return (len);
 }
