@@ -1,51 +1,51 @@
 #include "lists.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
- * insert_nodeint_at_index - Function thatinserts a new node.
+ * insert_nodeint_at_index - function that inserts a new node.
  *
- * @head: double pointer to the head.
- * @idx: is the index of the list.
- * @n: data.
+ * @head: linked list.
+ * @idx: nth node.
+ * @n: struct member.
  *
- * Return: Null if it failed or the address of the new node
+ * Return: nothing.
  */
 
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	listint_t *headaux;
-	listint_t *newnode;
-	unsigned int size;
+	unsigned int s = 0;
+	struct listint_s *temp = *head, *nxtnode, *newnode;
 
-	size = 0;
-
-	newnode = malloc(sizeof(listint_t));
-
-	if (newnode == NULL)
+	if (head == NULL)
 		return (NULL);
 
+	while (s < idx - 1 && temp != NULL)
+	{
+		temp = temp->next;
+		s++;
+	}
+	if (temp == NULL && idx != 0)
+	{
+		return (NULL);
+	}
+
+	newnode = malloc(sizeof(*newnode));
+	if (newnode == NULL)
+		return (NULL);
 	newnode->n = n;
 
 	if (idx == 0)
 	{
 		newnode->next = *head;
 		*head = newnode;
-		return (newnode);
 	}
-
-	headaux = *head;
-
-	while (headaux != NULL && size != idx - 1)
+	else
 	{
-		size++;
-		headaux = headaux->next;
+		nxtnode = temp->next;
+		newnode->next = nxtnode;
+		temp->next = newnode;
 	}
 
-	if (size == idx - 1 && headaux != NULL)
-	{
-		newnode->next = headaux->next;
-		headaux->next = newnode;
-		return (newnode);
-	}
-	free(newnode);
-	return (NULL);
+	return (newnode);
 }
