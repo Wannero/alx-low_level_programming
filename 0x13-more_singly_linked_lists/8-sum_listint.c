@@ -1,9 +1,9 @@
 #include "lists.h"
 
 /**
- * sum_listint - Function that sum all the data (n).
+ * sum_listint - sum all the data (n).
  *
- * @head: a pointer to the head of the list.
+ * @head: a pointer to the head.
  *
  * Return: 0 if the list is empty or the sum.
  */
@@ -23,9 +23,9 @@ int sum_listint(listint_t *head)
 }
 
 /**
- * sumofnodes - fonction that find the sum of ndoes.
+ * sumofnodes - find the sum of ndoes.
  *
- * @head: a pointer to the head.
+ * @head: a pointer to the head of the lintint_t list.
  * @sum: integer that sums.
  *
  * Return: the sum.
