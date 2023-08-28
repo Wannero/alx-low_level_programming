@@ -1,46 +1,32 @@
 #include "lists.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
- * sum_listint - sum all the data (n).
+ * sum_listint - function that returns the sum
  *
- * @head: a pointer to the head.
+ * @head: linked list
  *
- * Return: 0 if the list is empty or the sum.
+ * Return: (sum or 0)
  */
 
 int sum_listint(listint_t *head)
 {
+	struct listint_s *temp = head;
 	int sum = 0;
 
-	while (head)
+	if (head == NULL)
 	{
-
-		sumofnodes(head, &sum);
-
-		return (sum);
+		return (0);
 	}
-	return (0);
-}
+	else
+	{
+		while (temp != NULL)
+		{
+			sum += temp->n;
+			temp = temp->next;
+		}
+	}
 
-/**
- * sumofnodes - find the sum of ndoes.
- *
- * @head: a pointer to the head of the lintint_t list.
- * @sum: integer that sums.
- *
- * Return: the sum.
- */
-
-void sumofnodes(listint_t *head, int *sum)
-{
-	int n;
-
-	if (!head)
-		return;
-
-	n = head->n;
-
-	sumofnodes(head->next, sum);
-
-	*sum = *sum + n;
+	return (sum);
 }
