@@ -1,9 +1,11 @@
 #include "lists.h"
 
 /**
-* print_listint_safe - function that prints a list but safely
+* print_listint_safe - prints a list but safely
 * @head: the head node. pointer
 *
+* Description: dont wanna print a infinite loop
+*	either match addresses or free the head so cant loop back
 * Return: the count number
 * A: we make an array that will store everything from head given
 * B: while the head is not null, we iterate through
@@ -19,7 +21,6 @@
 *	and we print out their pointer address and their value.
 * G: if we had an infinite loop we have a flag check of 1 which will
 *	also print out the index which is the last one.
-*
 */
 
 size_t print_listint_safe(const listint_t *head)
