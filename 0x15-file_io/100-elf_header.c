@@ -3,9 +3,11 @@
 #define REV(n) ((n << 24) | (((n >> 16) << 24) >> 16) | \
 				(((n << 16) >> 24) << 16) | (n >> 24))
 /**
- * verify- verify the file to check if is a ELF
+ * verify- function that verify the file.
+ *
  * @e_ident: the ELF struct
- * return: no return is a void func.
+ *
+ * return: no return.
  */
 
 void verify(unsigned char *e_ident)
@@ -23,27 +25,30 @@ void verify(unsigned char *e_ident)
 }
 
 /**
- * magic - print magic number
- * @e_ident: the ELF struct
- * return: no return is a void func.
+ * magic - function that print magic number.
+ *
+ * @e_ident: the ELF struct.
+ * return: no return.
  */
 
 void magic(unsigned char *e_ident)
 {
-	int i; /* the index to count the magic bytes */
+	int s;
 	int limit;
 
 	limit = EI_NIDENT - 1;
 	printf("  Magic:   ");
-	for (i = 0; i < limit; i++)
-		printf("%02x ", *(e_ident + i));
-	printf("%02x\n", *(e_ident + i));
+	for (s = 0; s < limit; s++)
+		printf("%02x ", *(e_ident + s));
+	printf("%02x\n", *(e_ident + s));
 }
 
 /**
- * class - print the class of the ELF
- * @e_ident: the ELF struct
- * return: no return is a void func.
+ * class - function that print the class of the ELF
+ *
+ * @e_ident: the ELF struct.
+ *
+ * return: no return.
  */
 
 void class(unsigned char *e_ident)
@@ -62,7 +67,7 @@ void class(unsigned char *e_ident)
 /**
  * data - print mthe type of data
  * @e_ident: the ELF struct
- * return: no return is a void func.
+ * return: no return.
  */
 
 void data(unsigned char *e_ident)
@@ -81,7 +86,7 @@ void data(unsigned char *e_ident)
 /**
  * version - print the version of the file
  * @e_ident: the ELF struct
- * return: no return is a void func.
+ * return: no return.
  */
 
 void version(unsigned char *e_ident)
@@ -96,7 +101,7 @@ void version(unsigned char *e_ident)
 /**
  * osabi - print the osabi
  * @e_ident: the ELF struct
- * return: no return is a void func.
+ * return: no return.
  */
 void osabi(unsigned char *e_ident)
 {
@@ -126,10 +131,11 @@ void osabi(unsigned char *e_ident)
 }
 
 /**
- * type - print the type
+ * type - function that print the type
+ *
  * @e_ident: the ELF struct
  * @e_type: data to compare and print.
- * return: no return is a void func.
+ * return: no return.
  */
 
 void type(unsigned int e_type, unsigned char *e_ident)
@@ -152,10 +158,12 @@ void type(unsigned int e_type, unsigned char *e_ident)
 }
 
 /**
- * entry - print the entry point
- * @e_ident: the ELF struct
- * @e_entry: the data to print
- * return: no return is a void func.
+ * entry - function that print the entry point.
+ *
+ * @e_ident: the ELF struct.
+ * @e_entry: the data to print.
+ *
+ * return: no return.
  */
 
 void entry(unsigned int e_entry, unsigned char *e_ident)
@@ -168,10 +176,11 @@ void entry(unsigned int e_entry, unsigned char *e_ident)
 }
 
 /**
- * main - read a ELF file.
- * @argc: the number of args
- * @argv: the Args
- * section header: the header of this function is main.h
+ * main - function that read a ELF file.
+ *
+ * @argc: the number of args.
+ * @argv: the Args.
+ *
  * Return: 0 in success
  */
 
